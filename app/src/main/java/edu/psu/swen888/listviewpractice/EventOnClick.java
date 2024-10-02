@@ -34,7 +34,7 @@ public class EventOnClick extends AppCompatActivity {
 
         String eventTitle = "Event: " + String.valueOf(selectedEvent.getTitle());
         String eventType = "Type: " + String.valueOf(selectedEvent.getType());
-        String eventNumberOfTeams = "Number of Trials " + String.valueOf(selectedEvent.getNumberOfTeams());
+        String eventNumberOfTeams = "Number of Trials: " + String.valueOf(selectedEvent.getNumberOfTeams());
         String eventCurrentRecord = "Current Record: " + String.valueOf(selectedEvent.getCurrentRecord());
         String eventCurrentRecordHolder = "Current Record Holder: " + String.valueOf(selectedEvent.getCurrentRecordHolder());
         String eventCurrentRecordYear = "Current Record Year: " + String.valueOf(selectedEvent.getCurrentRecordYear());
