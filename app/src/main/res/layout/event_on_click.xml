@@ -13,58 +13,36 @@
         android:textSize="18sp"/>
 
     <TextView
-        android:id="@+id/textview_address"
+        android:id="@+id/textview_type"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text = "Address"
+        android:text = "Type"
         android:textSize="18sp"/>
 
     <TextView
-        android:id="@+id/textview_zipcode"
+        android:id="@+id/textview_numberOfTeams"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text = "Zip Code"
+        android:text = "Number of Teams"
         android:textSize="18sp"/>
 
     <TextView
-        android:id="@+id/textview_date"
+        android:id="@+id/textview_currentRecord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text = "Date"
+        android:text = "Current Record"
         android:textSize="18sp"/>
 
     <TextView
-        android:id="@+id/textview_start_time"
+        android:id="@+id/textview_currentRecordHolder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text = "Start Time"
+        android:text = "Current Record Holder"
         android:textSize="18sp"/>
     <TextView
-        android:id="@+id/textview_end_time"
+        android:id="@+id/textview_currentRecordYear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text = "End Time"
+        android:text = "Current Record Year"
         android:textSize="18sp"/>
-    <TextView
-        android:id="@+id/textview_category"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text = "Event Category"
-        android:textSize="18sp"/>
-    <TextView
-        android:id="@+id/textview_attendance_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text = "Attendance Type"
-        android:textSize="18sp"/>
-    <TextView
-        android:id="@+id/textview_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text = "Event Description"
-        android:textSize="18sp"/>
-
-
-
-
 </LinearLayout>

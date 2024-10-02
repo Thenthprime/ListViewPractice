@@ -26,24 +26,14 @@ public class EventListAdapter extends ArrayAdapter<Event>{
         Event event = getItem(position);
 
         TextView textViewTitle = convertView.findViewById(R.id.textview_event_title);
-        TextView textViewAddress = convertView.findViewById(R.id.textview_event_address);
-        TextView textViewZipCode = convertView.findViewById(R.id.textview_event_zipcode);
-        TextView textViewDate = convertView.findViewById(R.id.textview_event_date);
-        TextView textViewStartTime = convertView.findViewById(R.id.textview_event_start_time);
-        TextView textViewEndTime = convertView.findViewById(R.id.textview_event_end_time);
-        TextView textViewCategory = convertView.findViewById(R.id.textview_event_category);
-        TextView textViewAttendanceType = convertView.findViewById(R.id.textview_event_attendance_type);
-        TextView textViewDescription = convertView.findViewById(R.id.textview_event_description);
+        TextView textViewType = convertView.findViewById(R.id.textview_event_type);
 
-        textViewTitle.setText(String.valueOf(event.getTitle()));
-        textViewAddress.setText(String.valueOf(event.getAddress()));
-        textViewZipCode.setText(String.valueOf(event.getZipCode()));
-        textViewDate.setText(String.valueOf(event.getDate()));
-        textViewStartTime.setText(String.valueOf(event.getStartTime()));
-        textViewEndTime.setText(String.valueOf(event.getEndTime()));
-        textViewCategory.setText(String.valueOf(event.getCategory()));
-        textViewAttendanceType.setText(String.valueOf(event.getAttendanceType()));
-        textViewDescription.setText(String.valueOf(event.getDescription()));
+        String eventTitle = "Event: " + String.valueOf(event.getTitle());
+        String eventType = "Type: " + String.valueOf(event.getType());
+
+
+        textViewTitle.setText(eventTitle);
+        textViewType.setText(eventType);
 
         return convertView;
     }

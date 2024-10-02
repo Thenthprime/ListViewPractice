@@ -1,20 +1,22 @@
 package edu.psu.swen888.listviewpractice;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class EventOnClick extends AppCompatActivity {
     private TextView mTextViewTitle;
-    private TextView mTextViewAddress;
-    private TextView mTextViewZipCode;
-    private TextView mTextViewEventDate;
-    private TextView mTextViewStartTime;
-    private TextView mTextViewEndTime;
-    private TextView mTextViewCategory;
-    private TextView mTextViewAttendanceType;
-    private TextView mTextViewDescription;
+    private TextView mTextViewType;
+    private TextView mTextViewNumberOfTeams;
+    private TextView mTextViewCurrentRecord;
+    private TextView mTextViewCurrentRecordHolder;
+    private TextView mTextViewCurrentRecordYear;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -24,24 +26,41 @@ public class EventOnClick extends AppCompatActivity {
         Event selectedEvent = (Event) getIntent().getSerializableExtra("selected_event");
 
         mTextViewTitle = findViewById(R.id.textview_title);
-        mTextViewAddress = findViewById(R.id.textview_address);
-        mTextViewZipCode = findViewById(R.id.textview_zipcode);
-        mTextViewEventDate = findViewById(R.id.textview_date);
-        mTextViewStartTime = findViewById(R.id.textview_start_time);
-        mTextViewEndTime = findViewById(R.id.textview_end_time);
-        mTextViewCategory = findViewById(R.id.textview_category);
-        mTextViewAttendanceType = findViewById(R.id.textview_attendance_type);
-        mTextViewDescription = findViewById(R.id.textview_description);
+        mTextViewType = findViewById(R.id.textview_type);
+        mTextViewNumberOfTeams = findViewById(R.id.textview_numberOfTeams);
+        mTextViewCurrentRecord = findViewById(R.id.textview_currentRecord);
+        mTextViewCurrentRecordHolder = findViewById(R.id.textview_currentRecordHolder);
+        mTextViewCurrentRecordYear = findViewById(R.id.textview_currentRecordYear);
 
-        mTextViewTitle.setText(String.valueOf(selectedEvent.getTitle()));
-        mTextViewAddress.setText(String.valueOf(selectedEvent.getAddress()));
-        mTextViewZipCode.setText(String.valueOf(selectedEvent.getZipCode()));
-        mTextViewEventDate.setText(String.valueOf(selectedEvent.getDate()));
-        mTextViewStartTime.setText(String.valueOf(selectedEvent.getStartTime()));
-        mTextViewEndTime.setText(String.valueOf(selectedEvent.getEndTime()));
-        mTextViewCategory.setText(String.valueOf(selectedEvent.getCategory()));
-        mTextViewAttendanceType.setText(String.valueOf(selectedEvent.getAttendanceType()));
-        mTextViewDescription.setText(String.valueOf(selectedEvent.getDescription()));
+        String eventTitle = "Event: " + String.valueOf(selectedEvent.getTitle());
+        String eventType = "Type: " + String.valueOf(selectedEvent.getType());
+        String eventNumberOfTeams = "Number of Trials " + String.valueOf(selectedEvent.getNumberOfTeams());
+        String eventCurrentRecord = "Current Record: " + String.valueOf(selectedEvent.getCurrentRecord());
+        String eventCurrentRecordHolder = "Current Record Holder: " + String.valueOf(selectedEvent.getCurrentRecordHolder());
+        String eventCurrentRecordYear = "Current Record Year: " + String.valueOf(selectedEvent.getCurrentRecordYear());
 
+        mTextViewTitle.setText(eventTitle);
+        mTextViewType.setText(eventType);
+        mTextViewNumberOfTeams.setText(eventNumberOfTeams);
+        mTextViewCurrentRecord.setText(eventCurrentRecord);
+        mTextViewCurrentRecordHolder.setText(eventCurrentRecordHolder);
+        mTextViewCurrentRecordYear.setText(eventCurrentRecordYear);
+
+        // calling the action bar
+        ActionBar actionBar = getSupportActionBar();
+
+        // showing the back button in action bar
+        actionBar.setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                Toast.makeText(EventOnClick.this, ("Returning to All Events List."), Toast.LENGTH_SHORT).show();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

@@ -1,13 +1,12 @@
 package edu.psu.swen888.listviewpractice;
 
-import static android.content.Intent.*;
-
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,13 +16,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //layout according to the xml file
         setContentView(R.layout.main_activity);
+
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
     public void onShowAllEventsClicked(View view){
-        String name = "Hello Java";
-        int mData = 25;
         Intent intent = new Intent(MainActivity.this, ShowAllEvents.class);
-        intent.putExtra("text", name);
-        intent.putExtra("data", mData);
         startActivity(intent);
     }
 }

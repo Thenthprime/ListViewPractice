@@ -4,42 +4,31 @@ import java.io.Serializable;
 
 public class Event implements Serializable {
     private String title;
-    private String address;
-    private int zipCode;
-    private int date;
-    private int startTime;
-    private int endTime;
-    private String category;
-    private String attendanceType;
-    private String description;
+    private String type;
+    private int numberOfTeams;
+    private String currentRecord;
+    private String currentRecordHolder;
+    private int currentRecordYear;
 
-    public Event(String title, String address, int zipCode, int date, int startTime, int endTime, String category, String attendanceType, String description){
+    public Event(String title, String type, int numberOfTeams, String currentRecord, String currentRecordHolder, int currentRecordYear){
         this.title = title;
-        this.address = address;
-        this.zipCode = zipCode;
-        this.date = date;
-        this.startTime = startTime;
-        this.endTime = endTime;
-        this.category = category;
-        this.attendanceType = attendanceType;
-        this.description = description;
+        this.type = type;
+        this.numberOfTeams = numberOfTeams;
+        this.currentRecord = currentRecord;
+        this.currentRecordHolder = currentRecordHolder;
+        this.currentRecordYear = currentRecordYear;
     }
 
     public String getTitle(){
         return title;
     }
-    public String getAddress(){
-        return address;
+    public String getType(){
+        return type;
     }
-    public int getZipCode(){
-        return zipCode;
+    public int getNumberOfTeams(){
+        return numberOfTeams;
     }
-    public int getDate(){return date;}
-    public int getStartTime(){return startTime;}
-    public int getEndTime(){return endTime;}
-    public String getCategory(){return category;}
-    public String getAttendanceType(){return attendanceType;}
-    public String getDescription(){return description;}
-
-
+    public String getCurrentRecord(){return currentRecord;}
+    public String getCurrentRecordHolder(){return currentRecordHolder;}
+    public int getCurrentRecordYear(){return currentRecordYear;}
 }
