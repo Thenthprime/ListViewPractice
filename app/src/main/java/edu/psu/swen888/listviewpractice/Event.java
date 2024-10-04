@@ -19,6 +19,8 @@ public class Event implements Serializable {
         this.currentRecordYear = currentRecordYear;
     }
 
+    //getter methods for the event details
+
     public String getTitle(){
         return title;
     }

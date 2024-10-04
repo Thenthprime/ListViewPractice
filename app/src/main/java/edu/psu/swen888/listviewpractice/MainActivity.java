@@ -4,9 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
         //layout according to the xml file
         setContentView(R.layout.main_activity);
     }
+
+    //add functionality to the back menu bar
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+    //use an intent to go from main activity into the all events listview
     public void onShowAllEventsClicked(View view){
         Intent intent = new Intent(MainActivity.this, ShowAllEvents.class);
         startActivity(intent);

@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,12 +16,13 @@ public class EventOnClick extends AppCompatActivity {
     private TextView mTextViewCurrentRecordHolder;
     private TextView mTextViewCurrentRecordYear;
 
-
+    //method to display the event when it is chosen from the list
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_on_click);
 
+        //serialized event that was clicked
         Event selectedEvent = (Event) getIntent().getSerializableExtra("selected_event");
 
         mTextViewTitle = findViewById(R.id.textview_title);
@@ -53,6 +53,7 @@ public class EventOnClick extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
+    //method for adding functionality to the back button on the menu bar
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {

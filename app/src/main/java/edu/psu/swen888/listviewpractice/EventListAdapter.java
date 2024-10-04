@@ -1,7 +1,5 @@
 package edu.psu.swen888.listviewpractice;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -22,13 +20,14 @@ public class EventListAdapter extends ArrayAdapter<Event>{
     private Button detailsButton;
 
 
-
     public EventListAdapter(Context context, ArrayList<Event> events, int image){
         super(context, 0, events);
         this.context = context;
       }
     @NonNull
     @Override
+
+    //adatpter's getView method to populate the data from the list into the listview position
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent){
         if(convertView == null){
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item_event, parent, false);
