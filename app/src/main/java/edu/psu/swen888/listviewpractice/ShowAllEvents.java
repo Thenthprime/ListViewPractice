@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -37,16 +38,6 @@ public class ShowAllEvents extends AppCompatActivity {
             mListViewEvents = findViewById(R.id.listview_events);
             mListViewEvents.setAdapter(adapter);
         }
-
-        mListViewEvents.setOnItemClickListener(new AdapterView.OnItemClickListener(){
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-                Event selectedEvent = (Event) parent.getItemAtPosition(position);
-                Intent intent = new Intent(ShowAllEvents.this, EventOnClick.class);
-                intent.putExtra("selected_event", selectedEvent);
-                startActivity(intent);
-            }
-        });
 
         // calling the action bar
         ActionBar actionBar = getSupportActionBar();
